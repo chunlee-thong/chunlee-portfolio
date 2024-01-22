@@ -1,6 +1,6 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import { StoreSchema } from "../../content/config";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { StoreSchema } from "../../content/config";
 import StoreItemLayout from "../../layouts/StoreItemLayout.astro";
 
 export async function getStaticPaths() {
@@ -31,7 +31,6 @@ const { Content } = await entry.render();
   checkoutUrl={item.checkoutUrl}
   badge={item.badge}
   custom_link={item.custom_link}
-  custom_link_label={item.custom_link_label}
->
+  custom_link_label={item.custom_link_label}>
   <Content />
 </StoreItemLayout>
